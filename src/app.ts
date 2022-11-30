@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 // Specify the directory where is the view's files
 app.set('views', join(rootDir, 'views'));
 
-// All middlewares are executes from top to bottom
+// All middleware are executes from top to bottom
 
 // Automatically call the next function in the end;
 app.use(bodyParser.urlencoded({extended: false}));
@@ -33,7 +33,11 @@ app.use(shopRoutes);
 
 // 404 route
 app.use((_, res: Response) => {
-  res.render("404", { products, docTitle: "404 Not Found" });
+  res.render("404", {
+    products,
+    path: 'not-found',
+    pageTitle: "404 Not Found"
+  });
 });
 
 httpServer = http.createServer(app);
