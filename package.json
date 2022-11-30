@@ -5,7 +5,6 @@
   "main": "dist/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "mkdir -p dist/views && ncp src/views/shop.html dist/views/shop.html && ncp src/views/add-product.html dist/views/add-product.html && tsc --watch",
     "build": "cross-env NODE_ENV=production gulp",
     "dev": "cross-env NODE_ENV=develop gulp watchFiles"
   },
